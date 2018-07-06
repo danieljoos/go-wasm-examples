@@ -45,5 +45,6 @@ Hacker News and displays them as list of anchors in the DOM.
 Browse to http://localhost:3000 after building the example:
 
 ```bash
+go get -u github.com/PaulRosset/go-hacknews
 GOARCH=wasm GOOS=js go build -o test.wasm ./wasm3
 ```
