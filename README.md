@@ -9,8 +9,8 @@ The `server` directory contains a very small HTTP server implementation that sim
 It also downloads the `wasm_exec.js` JavaScript bridge from the official golang repository, if the file doesn't already exist.
 
 ```bash
-go build ./server
-./server
+go build -o server.bin ./server
+./server.bin
 ```
 
 
