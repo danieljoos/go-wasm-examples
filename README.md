@@ -12,7 +12,7 @@ It also downloads the `wasm_exec.js` JavaScript bridge from the official golang 
 go build -o server.bin ./server
 ./server.bin
 ```
-
+You can also use any other web-server that provides static file hosting.
 
 ## Example 1:
 
