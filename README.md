@@ -18,7 +18,7 @@ The first example prints a "Hello World" to the console of the browser.
 Browse to http://localhost:3000 after building the example:
 
 ```bash
-go build -o test.wasm ./wasm1
+GOARCH=wasm GOOS=js go build -o test.wasm ./wasm1
 ```
 
 ## Example 2:
@@ -28,5 +28,5 @@ It also registers a click handler on the button and keeps the go program alive u
 Browse to http://localhost:3000 after building the example:
 
 ```bash
-go build -o test.wasm ./wasm2
+GOARCH=wasm GOOS=js go build -o test.wasm ./wasm2
 ```
