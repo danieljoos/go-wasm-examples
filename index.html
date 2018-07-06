@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Golang Web Assembly Examples</title>
+</head>
+
+<body>
+    <button id="run">Run</button>
+    <button id="stop" disabled>Stop</button>
+
+    <script src="wasm_exec.js"></script>
+    <script type="text/javascript">
+        (async () => {
+            const button = document.getElementById('run');
+            button.disabled = true;
+
+            // Initialize
+            const go = new Go();
+            let { module, instance } = await WebAssembly.instantiateStreaming(fetch("test.wasm"), go.importObject);
+            button.disabled = false;
+
+            // Run
+            button.onclick = async () => {
+                button.disabled = true;
+                await go.run(instance);
+                instance = await WebAssembly.instantiate(module, go.importObject);
+                button.disabled = false;
+            };
+        })();
+    </script>
+</body>
+
+</html>
