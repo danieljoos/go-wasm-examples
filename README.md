@@ -1,6 +1,8 @@
 # go-wasm-examples
 Some small examples of using Go and WebAssembly
 
+The examples require at least *Go version 1.11beta*!
+
 # Usage
 
 The `server` directory contains a very small HTTP server implementation that simply hosts the files of the current working directory.
