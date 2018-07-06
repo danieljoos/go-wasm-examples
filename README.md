@@ -48,3 +48,15 @@ Browse to http://localhost:3000 after building the example:
 go get -u github.com/PaulRosset/go-hacknews
 GOARCH=wasm GOOS=js go build -o test.wasm ./wasm3
 ```
+
+## Example 4:
+
+The fourth example implements a very simple markdown editor that uses the
+package `github.com/shurcooL/github_flavored_markdown` to render
+github-flavoured markdown to HTML.
+Browse to http://localhost:3000 after building the example:
+
+```bash
+go get -u github.com/shurcooL/github_flavored_markdown
+GOARCH=wasm GOOS=js go build -o test.wasm ./wasm4
+```
