@@ -30,10 +30,11 @@ func main() {
 	// See example 2: Enable the stop button
 	stopButton := getElementByID("stop")
 	stopButton.Set("disabled", false)
-	stopButton.Set("onclick", js.NewCallback(func([]js.Value) {
+	stopButton.Set("onclick", js.FuncOf(func(js.Value, []js.Value) interface{} {
 		println("stopping")
 		stopButton.Set("disabled", true)
 		quit <- struct{}{}
+		return nil
 	}))
 
 	// Simple markdown editor
@@ -41,11 +42,12 @@ func main() {
 	markdown := getElementByID("markdown")
 	preview := getElementByID("preview")
 	renderButton := getElementByID("render")
-	renderButton.Set("onclick", js.NewCallback(func([]js.Value) {
+	renderButton.Set("onclick", js.FuncOf(func(js.Value, []js.Value) interface{} {
 		// Process markdown input and show the result
 		md := markdown.Get("value").String()
 		html := github_flavored_markdown.Markdown([]byte(md))
 		preview.Set("innerHTML", string(html))
+		return nil
 	}))
 
 	<-quit

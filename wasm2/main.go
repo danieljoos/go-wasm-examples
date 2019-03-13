@@ -9,10 +9,11 @@ func main() {
 
 	stopButton := js.Global().Get("document").Call("getElementById", "stop")
 	stopButton.Set("disabled", false)
-	stopButton.Set("onclick", js.NewCallback(func([]js.Value) {
+	stopButton.Set("onclick", js.FuncOf(func(js.Value, []js.Value) interface{} {
 		println("stopping")
 		stopButton.Set("disabled", true)
 		quit <- struct{}{}
+		return nil
 	}))
 
 	<-quit
