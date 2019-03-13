@@ -1,7 +1,7 @@
 # go-wasm-examples
 Some small examples of using Go and WebAssembly
 
-The examples require at least **Go version 1.11beta**!
+The examples require at least **Go version 1.12**!
 
 # Usage
 
